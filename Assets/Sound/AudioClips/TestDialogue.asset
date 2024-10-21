@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ab335a9040e884faa4de3860abdf55, type: 3}
+  m_Name: TestDialogue
+  m_EditorClassIdentifier: 
+  MinPitch: 1.2
+  MaxPitch: 1.5
+  Volume: 0.6
+  Frequency: 2
+  Clips:
+  - {fileID: 8300000, guid: 18979dc9fc491004cbc37a66cc08034e, type: 3}
+  - {fileID: 8300000, guid: 81bfdcd2d5a51d347ae4205be68834d6, type: 3}
+  - {fileID: 8300000, guid: bf9b517f29c88e243abb4382f17869ad, type: 3}
+  - {fileID: 8300000, guid: 7c9214e5ff8cd18409a6faba42e98105, type: 3}
+  - {fileID: 8300000, guid: c652e93dd8fe07e41a7ef202b72fd104, type: 3}
+  - {fileID: 8300000, guid: f704957cfb5d3ec4e844edfb6830fad7, type: 3}
+  - {fileID: 8300000, guid: 3d8be94950e7a4c4d84382912e9c7bf8, type: 3}
+  - {fileID: 8300000, guid: 9d7752a734a8d98478c1d0ce718acf15, type: 3}
+  - {fileID: 8300000, guid: d61fc950eeadbf44a9b8793f3624196d, type: 3}
+  - {fileID: 8300000, guid: 3d8c2e4deddd5494190ce2e951c59703, type: 3}
