@@ -1,3 +1,4 @@
+using SmartData.SmartEvent;
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,6 +8,8 @@ public class PlayerInput : MonoBehaviour
     public static Action<Vector2> MoveEvent;
     public static Action<Vector2> LookEvent;
     public static Action InteractEvent;
+
+    public static Action PauseInput;
     
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -25,4 +28,12 @@ public class PlayerInput : MonoBehaviour
         InteractEvent?.Invoke();
         
     }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+
+        PauseInput?.Invoke();
+    }
+
 }

@@ -22,7 +22,7 @@ public class TextBox : MonoBehaviour
     {
         _currentTextBox = textBox;
 
-        transform.DOShakePosition(5, 3, 50, 90, false, false);
+        transform.DOShakePosition(30, 3, 50, 90, false, false);
 
         _box.SetActive(true);
 
