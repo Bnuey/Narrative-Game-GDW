@@ -73,6 +73,12 @@ public class PlayerController : MonoBehaviour
         movement = move;
     }
 
+    public void ResetPlayerMovement()
+    {
+        movement = Vector3.zero;
+    }
+
+
     void OnEnable()
     {
         PlayerInput.MoveEvent += GetPlayerMovement;

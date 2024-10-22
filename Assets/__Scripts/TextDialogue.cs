@@ -1,10 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
 public class TextDialogue : ScriptableObject
 {
-    public string Text;
-    public float ShowTime = 1;
+    public List<string> Text;
 
     public AudioClips DialogueAudioClips;
 

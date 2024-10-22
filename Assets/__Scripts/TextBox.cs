@@ -1,4 +1,5 @@
 using DG.Tweening;
+using SmartData.SmartEvent;
 using System;
 using System.Threading.Tasks;
 using TMPro;
@@ -11,29 +12,33 @@ public class TextBox : MonoBehaviour
 
     [SerializeField] AudioClip _textBoxAppearAudioClip;
 
-    bool _hideBox;
+    [SerializeField] EventDispatcher _npcTalkingEvent, _npcDoneTalking;
 
-    public static Action<bool> Talking;
+    int _currentLine;
+
+    TextDialogue _currentTextBox;
 
     public async void ShowTextBox(TextDialogue textBox)
     {
+        _currentTextBox = textBox;
+
         transform.DOShakePosition(5, 3, 50, 90, false, false);
-        _hideBox = false;
 
         _box.SetActive(true);
 
+        _npcTalkingEvent.Dispatch();
+
         SoundFXManager.Instance.PlayRandomPitchSoundFXClip(_textBoxAppearAudioClip, transform, 0.3f, .9f, 1.2f);
 
-        Talking?.Invoke(true);
-
-        for (int i = 0; i < textBox.Text.Length - 1; i++)
+        for (int i = 0; i < textBox.Text[_currentLine].Length - 1; i++)
         {
             if (_text.text.Length % textBox.DialogueAudioClips.Frequency == 0)
             {
 
                 float predictablePitch = 0;
 
-                var currentChar = textBox.Text[i];
+                var currentLine = textBox.Text[_currentLine];
+                var currentChar = currentLine[i];
 
                 // Hash
                 int hashCode = Mathf.Abs(currentChar.GetHashCode());
@@ -62,32 +67,46 @@ public class TextBox : MonoBehaviour
                 SoundFXManager.Instance.PlaySoundFXClip(soundClip, transform, textBox.DialogueAudioClips.Volume, predictablePitch);
             }
 
-            string currentText = textBox.Text.Remove(i);
+            string currentText = textBox.Text[_currentLine].Remove(i);
             _text.text = currentText;
             await Awaitable.WaitForSecondsAsync(0.02f);
         }
         
         
-        _text.text = textBox.Text;
-
-        Talking?.Invoke(false);
-
-        _hideBox = true;
-        await HideTextBox(textBox.ShowTime);
+        _text.text = textBox.Text[_currentLine];
     }
 
-    async Task HideTextBox(float time)
+    public void HideTextBox()
     {
-        await Awaitable.WaitForSecondsAsync(time);
-
-        if (!_hideBox) return;
-
         _box.SetActive(false);
         _text.text = "";
 
-        _hideBox = false;
+        _currentTextBox = null;
+        _currentLine = 0;
+        _npcDoneTalking.Dispatch();
+    }
 
-        
+    void ContinueText()
+    {
+        if (_currentLine >= _currentTextBox.Text.Count - 1)
+        {
+            HideTextBox();
+        }
+        else
+        {
+            _currentLine += 1;
+            ShowTextBox(_currentTextBox);
+        }
 
+    }
+
+    private void OnEnable()
+    {
+        PlayerContinueDialogue.ContinueTalking += ContinueText;
+    }
+
+    private void OnDisable()
+    {
+        PlayerContinueDialogue.ContinueTalking -= ContinueText;
     }
 }

@@ -33,6 +33,17 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Physics.SphereCast(_cam.transform.position, _interactSphere, _cam.transform.forward, out RaycastHit hitinfo, _interactDistance, _layerMask))
+        {
+            if (hitinfo.collider.gameObject.TryGetComponent<OutlineObject>(out OutlineObject outlinedObject))
+            {
+                outlinedObject.UpdateOutline(true);
+            }
+        }
+    }
+
     private void OnEnable()
     {
         PlayerInput.InteractEvent += Interact;
