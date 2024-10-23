@@ -17,4 +17,47 @@ MonoBehaviour:
   - Line 1
   - line 2
   - line 3
+  SelectionBox: 0
   _nextTextBox: {fileID: 0}
+  Option1Bool:
+    _owner: {fileID: 11400000}
+    _ownerName: Test
+    _propertyPath: Option1Bool
+    _autoListen: 0
+    _multiIndex: 0
+    _refType: 2
+    _value: 0
+    _smartConst: {fileID: 0}
+    _smartVar: {fileID: 0}
+    _smartMulti: {fileID: 0}
+    _onUpdate:
+      m_PersistentCalls:
+        m_Calls: []
+  Option2Bool:
+    _owner: {fileID: 11400000}
+    _ownerName: Test
+    _propertyPath: Option2Bool
+    _autoListen: 0
+    _multiIndex: 0
+    _refType: 2
+    _value: 0
+    _smartConst: {fileID: 0}
+    _smartVar: {fileID: 0}
+    _smartMulti: {fileID: 0}
+    _onUpdate:
+      m_PersistentCalls:
+        m_Calls: []
+  Option3Bool:
+    _owner: {fileID: 11400000}
+    _ownerName: Test
+    _propertyPath: Option3Bool
+    _autoListen: 0
+    _multiIndex: 0
+    _refType: 2
+    _value: 0
+    _smartConst: {fileID: 0}
+    _smartVar: {fileID: 0}
+    _smartMulti: {fileID: 0}
+    _onUpdate:
+      m_PersistentCalls:
+        m_Calls: []

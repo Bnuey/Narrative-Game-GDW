@@ -13,7 +13,20 @@ public class TextBox : MonoBehaviour
 
     [SerializeField] AudioClip _textBoxAppearAudioClip;
 
-    [SerializeField] EventDispatcher _npcTalkingEvent, _npcDoneTalking;
+    [Header("Events")]
+    [SerializeField] EventDispatcher _npcTalkingEvent;
+    [SerializeField] EventDispatcher _npcDoneTalking;
+    [SerializeField] EventDispatcher _hideCursor;
+    [SerializeField] EventDispatcher _showCursor;
+
+    [Header("Boxes")]
+    [SerializeField] GameObject _selectionBox;
+    [SerializeField] GameObject _defaultBox;
+
+    [Header("OptionBoxes")]
+    [SerializeField] TextMeshProUGUI _option1;
+    [SerializeField] TextMeshProUGUI _option2;
+    [SerializeField] TextMeshProUGUI _option3;
 
     int _currentLine;
 
@@ -21,6 +34,30 @@ public class TextBox : MonoBehaviour
 
     public async void ShowTextBox(TextDialogue textBox)
     {
+        if (textBox.SelectionBox)
+        {
+            _selectionBox.SetActive(true);
+            _defaultBox.SetActive(false);
+
+            _option1.text = textBox.Text[0];
+            _option2.text = textBox.Text[1];
+            _option3.text = textBox.Text[2];
+
+            _box.color = textBox.Character.Color;
+
+            _showCursor.Dispatch();
+
+            return;
+        }
+        else
+        {
+            _selectionBox.SetActive(false);
+            _defaultBox.SetActive(true);
+            _hideCursor.Dispatch();
+        }
+
+
+
         _currentTextBox = textBox;
 
         _nameText.text = textBox.Character.Name;
@@ -112,6 +149,11 @@ public class TextBox : MonoBehaviour
             ShowTextBox(_currentTextBox);
         }
 
+    }
+
+    public void ClickOptionButton(int option)
+    {
+        _currentTextBox.SetBool(option);
     }
 
     private void OnEnable()

@@ -17,4 +17,47 @@ MonoBehaviour:
   - Oh my lady! You have finally awoken!
   - "You were asleep for so long that I feared you would never wake up again. :\u2019("
   - How are you feeling? Any better?
+  SelectionBox: 0
   _nextTextBox: {fileID: 11400000, guid: 58d443684d588474b838bcb40ee05807, type: 2}
+  Option1Bool:
+    _owner: {fileID: 11400000}
+    _ownerName: Maid
+    _propertyPath: Option1Bool
+    _autoListen: 0
+    _multiIndex: 0
+    _refType: 2
+    _value: 0
+    _smartConst: {fileID: 0}
+    _smartVar: {fileID: 0}
+    _smartMulti: {fileID: 0}
+    _onUpdate:
+      m_PersistentCalls:
+        m_Calls: []
+  Option2Bool:
+    _owner: {fileID: 11400000}
+    _ownerName: Maid
+    _propertyPath: Option2Bool
+    _autoListen: 0
+    _multiIndex: 0
+    _refType: 2
+    _value: 0
+    _smartConst: {fileID: 0}
+    _smartVar: {fileID: 0}
+    _smartMulti: {fileID: 0}
+    _onUpdate:
+      m_PersistentCalls:
+        m_Calls: []
+  Option3Bool:
+    _owner: {fileID: 11400000}
+    _ownerName: Maid
+    _propertyPath: Option3Bool
+    _autoListen: 0
+    _multiIndex: 0
+    _refType: 2
+    _value: 0
+    _smartConst: {fileID: 0}
+    _smartVar: {fileID: 0}
+    _smartMulti: {fileID: 0}
+    _onUpdate:
+      m_PersistentCalls:
+        m_Calls: []
