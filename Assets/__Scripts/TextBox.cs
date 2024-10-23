@@ -1,14 +1,15 @@
 using DG.Tweening;
 using SmartData.SmartEvent;
-using System;
-using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TextBox : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI _text;
-    [SerializeField] GameObject _box;
+    [SerializeField] Image _box;
+
+    [SerializeField] TextMeshProUGUI _nameText;
 
     [SerializeField] AudioClip _textBoxAppearAudioClip;
 
@@ -22,9 +23,12 @@ public class TextBox : MonoBehaviour
     {
         _currentTextBox = textBox;
 
+        _nameText.text = textBox.Character.Name;
+        _box.color = textBox.Character.Color;
+
         transform.DOShakePosition(30, 3, 50, 90, false, false);
 
-        _box.SetActive(true);
+        _box.gameObject.SetActive(true);
 
         _npcTalkingEvent.Dispatch();
 
@@ -32,7 +36,7 @@ public class TextBox : MonoBehaviour
 
         for (int i = 0; i < textBox.Text[_currentLine].Length - 1; i++)
         {
-            if (_text.text.Length % textBox.DialogueAudioClips.Frequency == 0)
+            if (_text.text.Length % textBox.Character.DialogueAudioClips.Frequency == 0)
             {
 
                 float predictablePitch = 0;
@@ -44,12 +48,12 @@ public class TextBox : MonoBehaviour
                 int hashCode = Mathf.Abs(currentChar.GetHashCode());
 
                 // Pick Sound Clip Based On Hash
-                int predictableIndex = hashCode % textBox.DialogueAudioClips.Clips.Count;
-                var soundClip = textBox.DialogueAudioClips.Clips[predictableIndex];
+                int predictableIndex = hashCode % textBox.Character.DialogueAudioClips.Clips.Count;
+                var soundClip = textBox.Character.DialogueAudioClips.Clips[predictableIndex];
 
                 // Pick Pitch Based On Hash
-                int minPitchInt = (int)(textBox.DialogueAudioClips.MinPitch * 100);
-                int maxPitchInt = (int)(textBox.DialogueAudioClips.MaxPitch * 100);
+                int minPitchInt = (int)(textBox.Character.DialogueAudioClips.MinPitch * 100);
+                int maxPitchInt = (int)(textBox.Character.DialogueAudioClips.MaxPitch * 100);
                 int pitchRangeInt = maxPitchInt - minPitchInt;
 
                 if (pitchRangeInt != 0)
@@ -59,12 +63,12 @@ public class TextBox : MonoBehaviour
                 }
                 else
                 {
-                    predictablePitch = textBox.DialogueAudioClips.MinPitch;
+                    predictablePitch = textBox.Character.DialogueAudioClips.MinPitch;
                 }
 
 
 
-                SoundFXManager.Instance.PlaySoundFXClip(soundClip, transform, textBox.DialogueAudioClips.Volume, predictablePitch);
+                SoundFXManager.Instance.PlaySoundFXClip(soundClip, transform, textBox.Character.DialogueAudioClips.Volume, predictablePitch);
             }
 
             string currentText = textBox.Text[_currentLine].Remove(i);
@@ -78,19 +82,29 @@ public class TextBox : MonoBehaviour
 
     public void HideTextBox()
     {
-        _box.SetActive(false);
-        _text.text = "";
-
+        ResetTextBox();
+        _box.gameObject.SetActive(false);
         _currentTextBox = null;
-        _currentLine = 0;
         _npcDoneTalking.Dispatch();
+    }
+
+    void ResetTextBox()
+    {
+        _text.text = "";
+        _currentLine = 0;
     }
 
     void ContinueText()
     {
         if (_currentLine >= _currentTextBox.Text.Count - 1)
         {
-            HideTextBox();
+            if (_currentTextBox._nextTextBox != null)
+            {
+                ResetTextBox();
+                ShowTextBox(_currentTextBox._nextTextBox);
+            }
+            else
+                HideTextBox();
         }
         else
         {

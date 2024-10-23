@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24d2b63d56ada174c91bff8546e83363, type: 3}
-  m_Name: Test
+  m_Name: Player
   m_EditorClassIdentifier: 
+  Character: {fileID: 11400000, guid: 9f26fd3e0a84a9b4f8056ad226ca69cd, type: 2}
   Text:
-  - Line 1
-  - line 2
-  - line 3
-  DialogueAudioClips: {fileID: 11400000, guid: 2045e2e074890e543bdbbfe90ccfb0a2, type: 2}
+  - No I am still feeling unwell
+  - I believe I am still sick (cough cough)
+  - "Yes, thank you for asking. I\u2019m feeling much better."
+  _nextTextBox: {fileID: 11400000, guid: 06fbc49e9aa360f418b82a9db3cb3976, type: 2}

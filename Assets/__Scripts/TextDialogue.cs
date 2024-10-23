@@ -4,11 +4,14 @@ using UnityEngine;
 [CreateAssetMenu]
 public class TextDialogue : ScriptableObject
 {
+    public Character Character;
+
     public List<string> Text;
 
-    public AudioClips DialogueAudioClips;
-
     TextBox _textBox;
+
+    public TextDialogue _nextTextBox;
+
     public void ShowText()
     {
         _textBox = FindFirstObjectByType<TextBox>();
