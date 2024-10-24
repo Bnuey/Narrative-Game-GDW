@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using SmartData.SmartEvent;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,6 +12,12 @@ public class GameManager : Singleton<GameManager>
 
 	int _currentFramerate;
 
+	int _currentNum;
+
+	public List<int> DecisionNumbers = new List<int>();
+
+	public static Action<int> AddDecisionNum;
+
 	[Header("Textboxes")]
 	[SerializeField] TextDialogue _testDialogue;
 	void Start()
@@ -18,6 +25,20 @@ public class GameManager : Singleton<GameManager>
 		_hideCursor.Dispatch();
 	}
 
+	void SaveDecision(int decison)
+	{
+		DecisionNumbers.Add(decison);
+	}
+
+    private void OnEnable()
+    {
+		AddDecisionNum += SaveDecision;
+    }
+
+    private void OnDisable()
+    {
+        AddDecisionNum -= SaveDecision;
+    }
 
     private void Update()
     {

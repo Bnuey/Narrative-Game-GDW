@@ -12,31 +12,12 @@ public class TextDialogue : ScriptableObject
     TextBox _textBox;
     public bool SelectionBox;
 
-    public TextDialogue _nextTextBox;
-
-    public BoolWriter Option1Bool, Option2Bool, Option3Bool;
+    public TextDialogue[] _nextTextBoxs;
 
     public void ShowText()
     {
         _textBox = FindFirstObjectByType<TextBox>();
         _textBox.ShowTextBox(this);
-    }
-
-    public void SetBool(int num)
-    {
-        switch (num)
-        {
-            case 0:
-                Option1Bool.value = true;
-                break;
-            case 1:
-                Option2Bool.value = true;
-                break;
-            case 2:
-                Option3Bool.value = true;
-                break;
-
-        }
     }
 
 }

@@ -10,7 +10,8 @@ public class PlayerInput : MonoBehaviour
     public static Action InteractEvent;
 
     public static Action PauseInput;
-    
+    public static Action JumpEvent;
+
     public void OnMove(InputAction.CallbackContext context)
     {
         MoveEvent?.Invoke(context.ReadValue<Vector2>());
@@ -34,6 +35,13 @@ public class PlayerInput : MonoBehaviour
         if (!context.performed) return;
 
         PauseInput?.Invoke();
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+
+        JumpEvent?.Invoke();
     }
 
 }

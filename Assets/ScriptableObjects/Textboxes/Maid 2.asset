@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24d2b63d56ada174c91bff8546e83363, type: 3}
-  m_Name: Maid
+  m_Name: Maid 2
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: c649641415393274f8ffd92be6babb0c, type: 2}
   Text:
-  - Oh my lady! You have finally awoken!
-  - "You were asleep for so long that I feared you would never wake up again. :\u2019("
-  - How are you feeling? Any better?
+  - Oh dear, your throat remains sore? The butler has some medicine that will help.
   SelectionBox: 0
   _nextTextBoxs:
-  - {fileID: 11400000, guid: 58d443684d588474b838bcb40ee05807, type: 2}
+  - {fileID: 11400000, guid: 06a9894ba1cd2484799d508ade36da32, type: 2}

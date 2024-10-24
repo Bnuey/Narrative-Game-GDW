@@ -39,6 +39,8 @@ public class TextBox : MonoBehaviour
             _selectionBox.SetActive(true);
             _defaultBox.SetActive(false);
 
+            _currentTextBox = textBox;
+
             _option1.text = textBox.Text[0];
             _option2.text = textBox.Text[1];
             _option3.text = textBox.Text[2];
@@ -135,10 +137,10 @@ public class TextBox : MonoBehaviour
     {
         if (_currentLine >= _currentTextBox.Text.Count - 1)
         {
-            if (_currentTextBox._nextTextBox != null)
+            if (_currentTextBox._nextTextBoxs.Length != 0)
             {
                 ResetTextBox();
-                ShowTextBox(_currentTextBox._nextTextBox);
+                ShowTextBox(_currentTextBox._nextTextBoxs[0]);
             }
             else
                 HideTextBox();
@@ -151,10 +153,13 @@ public class TextBox : MonoBehaviour
 
     }
 
-    public void ClickOptionButton(int option)
+    public void ClickOptionButton(int num)
     {
-        _currentTextBox.SetBool(option);
+        GameManager.AddDecisionNum?.Invoke(num);
+        ResetTextBox();
+        ShowTextBox(_currentTextBox._nextTextBoxs[num]);
     }
+
 
     private void OnEnable()
     {

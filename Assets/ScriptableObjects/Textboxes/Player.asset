@@ -18,46 +18,7 @@ MonoBehaviour:
   - I believe I am still sick (cough cough)
   - "Yes, thank you for asking. I\u2019m feeling much better."
   SelectionBox: 1
-  _nextTextBox: {fileID: 11400000, guid: 06fbc49e9aa360f418b82a9db3cb3976, type: 2}
-  Option1Bool:
-    _owner: {fileID: 11400000}
-    _ownerName: Player
-    _propertyPath: Option1Bool
-    _autoListen: 0
-    _multiIndex: 0
-    _refType: 2
-    _value: 0
-    _smartConst: {fileID: 0}
-    _smartVar: {fileID: 11400000, guid: ed89c4e7f63a60d4c9f23fe110ea0704, type: 2}
-    _smartMulti: {fileID: 0}
-    _onUpdate:
-      m_PersistentCalls:
-        m_Calls: []
-  Option2Bool:
-    _owner: {fileID: 11400000}
-    _ownerName: Player
-    _propertyPath: Option2Bool
-    _autoListen: 0
-    _multiIndex: 0
-    _refType: 2
-    _value: 0
-    _smartConst: {fileID: 0}
-    _smartVar: {fileID: 11400000, guid: dc870f00946e3f74098c9895dd60464b, type: 2}
-    _smartMulti: {fileID: 0}
-    _onUpdate:
-      m_PersistentCalls:
-        m_Calls: []
-  Option3Bool:
-    _owner: {fileID: 11400000}
-    _ownerName: Player
-    _propertyPath: Option3Bool
-    _autoListen: 0
-    _multiIndex: 0
-    _refType: 2
-    _value: 0
-    _smartConst: {fileID: 0}
-    _smartVar: {fileID: 11400000, guid: 3eaada117b37bd040950fb166f5c3fe7, type: 2}
-    _smartMulti: {fileID: 0}
-    _onUpdate:
-      m_PersistentCalls:
-        m_Calls: []
+  _nextTextBoxs:
+  - {fileID: 11400000, guid: 76ac7060dacc1f74fb1b93e88dd2c013, type: 2}
+  - {fileID: 11400000, guid: a29beeb67d242064fb8b0708bfd83e82, type: 2}
+  - {fileID: 11400000, guid: ed4abedb7f28c5f46b65e9eb0779b8f1, type: 2}

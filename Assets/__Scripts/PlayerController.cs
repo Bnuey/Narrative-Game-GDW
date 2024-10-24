@@ -82,11 +82,13 @@ public class PlayerController : MonoBehaviour
     void OnEnable()
     {
         PlayerInput.MoveEvent += GetPlayerMovement;
+        PlayerInput.JumpEvent += Jump;
     }
 
     void OnDisable()
     {
         PlayerInput.MoveEvent -= GetPlayerMovement;
+        PlayerInput.JumpEvent -= Jump;
     }
 
 }
