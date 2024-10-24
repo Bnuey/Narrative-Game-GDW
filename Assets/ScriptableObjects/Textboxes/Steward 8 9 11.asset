@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d2b63d56ada174c91bff8546e83363, type: 3}
+  m_Name: Steward 8 9 11
+  m_EditorClassIdentifier: 
+  Character: {fileID: 11400000, guid: 433d47eacba08b54e89b553e81799d96, type: 2}
+  Text:
+  - Wonderful!
+  - The prince will be, so happy now that you are officially married.
+  - "Of course the ceremony won\u2019t be for another week, some of his relatives
+    are coming from  very far away after all."
+  - "I\u2019m sure you would like to see your husband now that are officially married."
+  - He should be through the door.
+  SelectionBox: 0
+  _nextTextBoxs: []
+  SaveToIndex: 0

@@ -90,6 +90,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _doorOpenSound: {fileID: 8300000, guid: 961e27e8039761045ad4feddc389afbd, type: 3}
 --- !u!65 &6271027248944290153
 BoxCollider:
   m_ObjectHideFlags: 0

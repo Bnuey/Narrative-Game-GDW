@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 interactable.InteractedWith(hitinfo);
             }
+
         }
         else
         {

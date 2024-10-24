@@ -3,39 +3,52 @@ using UnityEngine;
 
 public class PlayerHoldItem : MonoBehaviour
 {
-    [SerializeField] Grabable _itemBeingHeld;
+    public Grabable ItemBeingHeld;
     [SerializeField] GameObject _holdItemPos;
 
-    [SerializeField] BoolWriter _holdingKey;
+    [SerializeField] BoolWriter _holdingKey, _holdingSpoon;
 
     private Vector3 velocity = Vector3.zero;
     [SerializeField] float _smoothDampSpeed;
 
+    [SerializeField] AudioClip _grabItemClip, _grabKeySound;
+
     public void GrabItem(Grabable grabable)
     {
-        _itemBeingHeld = grabable;
+        ItemBeingHeld = grabable;
+
+        SoundFXManager.Instance.PlaySoundFXClip(_grabItemClip, transform, 0.4f, 1);
+
         if (grabable.CompareTag("Key"))
+        {
             _holdingKey.value = true;
 
-        _itemBeingHeld.GetComponent<Collider>().enabled = false;
-        _itemBeingHeld.GetComponent<Rigidbody>().useGravity = false;
+            //SoundFXManager.Instance.PlaySoundFXClip(_grabKeySound, transform, 0.5f, 1);
+        }
+        else if (grabable.CompareTag("Spoon"))
+        {
+            _holdingSpoon.value = true;
+        }
+
+        ItemBeingHeld.GetComponent<Collider>().enabled = false;
+        ItemBeingHeld.GetComponent<Rigidbody>().useGravity = false;
     }
 
     public void ReleaseItem()
     {
-        if (_itemBeingHeld == null) return;
+        if (ItemBeingHeld == null) return;
         
-        _itemBeingHeld.GetComponent<Collider>().enabled = true;
-        _itemBeingHeld.GetComponent<Rigidbody>().useGravity = true;
+        ItemBeingHeld.GetComponent<Collider>().enabled = true;
+        ItemBeingHeld.GetComponent<Rigidbody>().useGravity = true;
         _holdingKey.value = false;
-        _itemBeingHeld = null;
+        ItemBeingHeld = null;
     }
 
     void DestroyKey()
     {
         if (_holdingKey.value)
         {
-            _itemBeingHeld.GetComponent<Key>().KillKey();
+            ItemBeingHeld.GetComponent<Key>().KillKey();
             ReleaseItem();
         }
     }
@@ -43,10 +56,10 @@ public class PlayerHoldItem : MonoBehaviour
 
     public void Update()
     {
-        if (_itemBeingHeld == null) return;
+        if (ItemBeingHeld == null) return;
 
-        _itemBeingHeld.transform.rotation = Quaternion.Slerp(_itemBeingHeld.transform.rotation, _holdItemPos.transform.rotation, Time.deltaTime * _smoothDampSpeed * 100);
-        _itemBeingHeld.transform.position = Vector3.SmoothDamp(_itemBeingHeld.transform.position, _holdItemPos.transform.position, ref velocity, _smoothDampSpeed);
+        ItemBeingHeld.transform.rotation = Quaternion.Slerp(ItemBeingHeld.transform.rotation, _holdItemPos.transform.rotation, Time.deltaTime * _smoothDampSpeed * 100);
+        ItemBeingHeld.transform.position = Vector3.SmoothDamp(ItemBeingHeld.transform.position, _holdItemPos.transform.position, ref velocity, _smoothDampSpeed);
     }
 
     private void OnEnable()

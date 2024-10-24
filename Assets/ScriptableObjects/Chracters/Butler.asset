@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Butler
   Color: {r: 0.3207547, g: 0.1729266, b: 0, a: 1}
-  DialogueAudioClips: {fileID: 11400000, guid: 2045e2e074890e543bdbbfe90ccfb0a2, type: 2}
+  DialogueAudioClips: {fileID: 11400000, guid: 0a0189ce70c9a7b4ea40cb1340a9a634, type: 2}

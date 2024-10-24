@@ -10,6 +10,8 @@ public class Door : MonoBehaviour, IInteractable
     [SerializeField] GameObject _hinge;
     [SerializeField] UnityEvent _doorOpen;
 
+    [SerializeField] AudioClip _doorOpenSound;
+
     public void InteractedWith(RaycastHit hitinfo)
     {
         if (_playerHoldingKey.value)
@@ -18,6 +20,7 @@ public class Door : MonoBehaviour, IInteractable
 
     void Open()
     {
+        SoundFXManager.Instance.PlaySoundFXClip(_doorOpenSound, transform, 0.3f, 1);
         _hinge.transform.DOLocalRotate(new Vector3(0, 110, 0), 0.5f);
         Key.DestroyKey?.Invoke();
         _doorOpen.Invoke();

@@ -1,4 +1,5 @@
 using DG.Tweening;
+using SmartData.SmartBool;
 using SmartData.SmartEvent;
 using TMPro;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class TextBox : MonoBehaviour
     [SerializeField] TextMeshProUGUI _nameText;
 
     [SerializeField] AudioClip _textBoxAppearAudioClip;
+
+    [SerializeField] BoolWriter _npcTalking;
 
     [Header("Events")]
     [SerializeField] EventDispatcher _npcTalkingEvent;
@@ -70,6 +73,7 @@ public class TextBox : MonoBehaviour
         _box.gameObject.SetActive(true);
 
         _npcTalkingEvent.Dispatch();
+        _npcTalking.value = true;
 
         SoundFXManager.Instance.PlayRandomPitchSoundFXClip(_textBoxAppearAudioClip, transform, 0.3f, .9f, 1.2f);
 
@@ -114,9 +118,10 @@ public class TextBox : MonoBehaviour
             _text.text = currentText;
             await Awaitable.WaitForSecondsAsync(0.02f);
         }
-        
-        
+
+
         _text.text = textBox.Text[_currentLine];
+        _npcTalking.value = false;
     }
 
     public void HideTextBox()
@@ -135,6 +140,8 @@ public class TextBox : MonoBehaviour
 
     void ContinueText()
     {
+        if (_npcTalking.value) return;
+
         if (_currentLine >= _currentTextBox.Text.Count - 1)
         {
             if (_currentTextBox._nextTextBoxs.Length != 0)

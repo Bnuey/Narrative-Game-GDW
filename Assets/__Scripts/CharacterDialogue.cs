@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CharacterDialogue : MonoBehaviour, IInteractable
 {
-    [SerializeField] TextDialogue[] _firstDialogueBoxs;
+    public TextDialogue[] _firstDialogueBoxs;
 
     public static Action<GameObject> LookAt;
     [SerializeField] GameObject _lookAtPoint;
