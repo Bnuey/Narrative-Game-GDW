@@ -10,16 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24d2b63d56ada174c91bff8546e83363, type: 3}
-  m_Name: PlayerSecondOption
+  m_Name: Player131415
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: 9f26fd3e0a84a9b4f8056ad226ca69cd, type: 2}
   Text:
-  - "I\u2019m getting married!? (cough cough)"
-  - Of course Steward, thank you. -sign the papers-
-  - "-Nod, sign the papers in your sister\u2019s name-"
+  - "\u201C\u2026\u201D -fall into void-"
+  - "\u201CNo you weren\u2019t\u201D -jump into void- "
+  - -Push the prince into void-
   SelectionBox: 1
-  _nextTextBoxs:
-  - {fileID: 11400000, guid: 9f20808210f6ca04ab38cac53a68a461, type: 2}
-  - {fileID: 11400000, guid: 4fcbb72c4be53bc49929f76ab17b0b93, type: 2}
-  - {fileID: 11400000, guid: 4fcbb72c4be53bc49929f76ab17b0b93, type: 2}
-  SaveToIndex: 1
+  _nextTextBoxs: []
+  SwitchToState: 0

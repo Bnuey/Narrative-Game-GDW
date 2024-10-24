@@ -17,5 +17,6 @@ MonoBehaviour:
   - Of course, Lady. You have been planning your wedding for months.
   - Are you feeling alright?
   SelectionBox: 0
-  _nextTextBoxs: []
-  SaveToIndex: 0
+  _nextTextBoxs:
+  - {fileID: 11400000, guid: 059ac6f2378c80b41bff147a0710fc69, type: 2}
+  SwitchToState: 0

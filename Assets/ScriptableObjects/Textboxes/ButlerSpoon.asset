@@ -17,5 +17,6 @@ MonoBehaviour:
   - Oh wonderful! You found the spoon!
   - Dinner is now served
   SelectionBox: 0
+  OptionNums: 
   _nextTextBoxs: []
-  SaveToIndex: 0
+  SwitchToState: 10

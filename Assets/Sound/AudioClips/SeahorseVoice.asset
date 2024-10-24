@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ab335a9040e884faa4de3860abdf55, type: 3}
+  m_Name: SeahorseVoice
+  m_EditorClassIdentifier: 
+  MinPitch: 0.85
+  MaxPitch: 1
+  Volume: 1
+  Frequency: 2
+  Clips:
+  - {fileID: 8300000, guid: 1df83333cd7c86b4f982fa84185e3cbe, type: 3}
+  - {fileID: 8300000, guid: 38cfd3d735d3c4d46ab52adc7a75c868, type: 3}
+  - {fileID: 8300000, guid: 6ee457228e4b55345a3f5537a3f6d81d, type: 3}
+  - {fileID: 8300000, guid: 931ec589eacc99d4f8763a5549aee077, type: 3}
+  - {fileID: 8300000, guid: 0936529daf58cbb4681dc4ced948b5e6, type: 3}
+  - {fileID: 8300000, guid: cf9615d7116891b408ba5e19d00accc0, type: 3}
+  - {fileID: 8300000, guid: a0e6e76a09ec0cc459083d709e5f66cc, type: 3}
+  - {fileID: 8300000, guid: 5f998ee3e7a830142bfe5ddaa59ac32d, type: 3}
+  - {fileID: 8300000, guid: e47ef918aaa646a418eb5f3b038fe2c2, type: 3}

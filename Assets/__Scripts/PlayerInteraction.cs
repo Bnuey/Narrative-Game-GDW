@@ -23,9 +23,11 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (Physics.SphereCast(_cam.transform.position, _interactSphere, _cam.transform.forward, out RaycastHit hitinfo, _interactDistance, _layerMask))
         {
-            if (hitinfo.collider.gameObject.TryGetComponent<IInteractable>(out IInteractable interactable))
+            var components = hitinfo.collider.gameObject.GetComponents<IInteractable>();
+
+            foreach (IInteractable comp in components)
             {
-                interactable.InteractedWith(hitinfo);
+                comp.InteractedWith(hitinfo);
             }
 
         }

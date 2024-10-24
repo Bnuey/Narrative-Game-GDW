@@ -18,5 +18,6 @@ MonoBehaviour:
   - I am sorry to call you here in such a rush, especially when you are still recovering,
     but the  documents of your marriage to the prince need your signature.
   SelectionBox: 0
-  _nextTextBoxs: []
-  SaveToIndex: 0
+  _nextTextBoxs:
+  - {fileID: 11400000, guid: 7de041c623f7160439f26da60a598ed5, type: 2}
+  SwitchToState: 0

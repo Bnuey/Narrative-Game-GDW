@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Steward
   Color: {r: 0.21806516, g: 0, b: 0.27450982, a: 1}
-  DialogueAudioClips: {fileID: 11400000, guid: 2045e2e074890e543bdbbfe90ccfb0a2, type: 2}
+  DialogueAudioClips: {fileID: 11400000, guid: d090b192a16d42e458c7b39a63557480, type: 2}

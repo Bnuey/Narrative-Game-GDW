@@ -14,7 +14,8 @@ public class TextDialogue : ScriptableObject
 
     public TextDialogue[] _nextTextBoxs;
 
-    public int SaveToIndex;
+    public GameState SwitchToState;
+
 
     public void ShowText()
     {

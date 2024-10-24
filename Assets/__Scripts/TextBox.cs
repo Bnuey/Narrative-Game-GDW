@@ -9,6 +9,7 @@ public class TextBox : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI _text;
     [SerializeField] Image _box;
+    [SerializeField] Image _nameBox;
 
     [SerializeField] TextMeshProUGUI _nameText;
 
@@ -67,10 +68,15 @@ public class TextBox : MonoBehaviour
 
         _nameText.text = textBox.Character.Name;
         _box.color = textBox.Character.Color;
+        _nameBox.color = textBox.Character.Color;
 
         transform.DOShakePosition(30, 3, 50, 90, false, false);
 
         _box.gameObject.SetActive(true);
+        if (_currentTextBox.Character.Color != Color.black)
+            _box.gameObject.SetActive(true);
+        else
+            _box.gameObject.SetActive(false);
 
         _npcTalkingEvent.Dispatch();
         _npcTalking.value = true;
@@ -119,14 +125,18 @@ public class TextBox : MonoBehaviour
             await Awaitable.WaitForSecondsAsync(0.02f);
         }
 
-
         _text.text = textBox.Text[_currentLine];
         _npcTalking.value = false;
+
     }
 
     public void HideTextBox()
     {
         ResetTextBox();
+
+        if (_currentTextBox.SwitchToState != GameState.Default)
+            GameManager.Instance.ChangeState(_currentTextBox.SwitchToState);
+
         _box.gameObject.SetActive(false);
         _currentTextBox = null;
         _npcDoneTalking.Dispatch();
@@ -162,9 +172,58 @@ public class TextBox : MonoBehaviour
 
     public void ClickOptionButton(int num)
     {
-        GameManager.AddDecisionNum?.Invoke(_currentTextBox.SaveToIndex, num);
-        ResetTextBox();
-        ShowTextBox(_currentTextBox._nextTextBoxs[num]);
+        switch (GameManager.Instance.CurrentState)
+        {
+            case (GameState.TalkToMaid):
+                if (num == 0)
+                    GameManager.Instance.ChangeState(GameState.Option1);
+                else if (num == 1)
+                    GameManager.Instance.ChangeState(GameState.Option2);
+                else if (num == 2)
+                    GameManager.Instance.ChangeState(GameState.Option3);
+                break;
+
+            case (GameState.FoundMeds):
+                if (num == 0)
+                    GameManager.Instance.ChangeState(GameState.Option4);
+                else if (num == 1)
+                    GameManager.Instance.ChangeState(GameState.TookMeds);
+                else if (num == 2)
+                    GameManager.Instance.ChangeState(GameState.TookMeds);
+                break;
+
+
+            case (GameState.GiveKey):
+                if (num == 0)
+                    GameManager.Instance.ChangeState(GameState.Option7);
+                else if (num == 1)
+                    GameManager.Instance.ChangeState(GameState.Option8);
+                else if (num == 2)
+                    GameManager.Instance.ChangeState(GameState.Option9);
+                break;
+
+            case GameState.Option7:
+                if (num == 0)
+                    GameManager.Instance.ChangeState(GameState.Option10);
+                else if (num == 1)
+                    GameManager.Instance.ChangeState(GameState.Option11);
+                else if (num == 2)
+                    GameManager.Instance.ChangeState(GameState.Option12);
+                break;
+
+            case GameState.Option9:
+                if (num == 0)
+                    GameManager.Instance.ChangeState(GameState.Option13);
+                else if (num == 1)
+                    GameManager.Instance.ChangeState(GameState.Option14);
+                else if (num == 2)
+                    GameManager.Instance.ChangeState(GameState.Option15);
+                break;
+        }
+
+
+
+        
     }
 
 

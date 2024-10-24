@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: fe03f3873b0944e4abefa6d7a604c2b0, type: 2}
   Text:
-  - "Oh you are awake, my love!\u201D"
+  - Oh you are awake, my love!
   - You were asleep for so long, I was worried sleepless.
   SelectionBox: 0
-  _nextTextBoxs: []
-  SaveToIndex: 0
+  _nextTextBoxs:
+  - {fileID: 11400000, guid: 996767cbac2addc49a92ed625945008b, type: 2}
+  SwitchToState: 0
