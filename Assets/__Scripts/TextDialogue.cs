@@ -14,6 +14,8 @@ public class TextDialogue : ScriptableObject
 
     public TextDialogue[] _nextTextBoxs;
 
+    public int SaveToIndex;
+
     public void ShowText()
     {
         _textBox = FindFirstObjectByType<TextBox>();

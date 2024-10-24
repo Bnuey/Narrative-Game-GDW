@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d2b63d56ada174c91bff8546e83363, type: 3}
+  m_Name: Butler 1
+  m_EditorClassIdentifier: 
+  Character: {fileID: 11400000, guid: 9228f7bba381bb44498d4ee99630a9ab, type: 2}
+  Text:
+  - Ah milady, I hear you are still troubled by a cough
+  - Terribly unfortunate
+  - However there should be some of your medicine left in one of these cupboards
+  SelectionBox: 0
+  _nextTextBoxs: []
+  SaveToIndex: 0

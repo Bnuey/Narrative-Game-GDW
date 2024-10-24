@@ -155,7 +155,7 @@ public class TextBox : MonoBehaviour
 
     public void ClickOptionButton(int num)
     {
-        GameManager.AddDecisionNum?.Invoke(num);
+        GameManager.AddDecisionNum?.Invoke(_currentTextBox.SaveToIndex, num);
         ResetTextBox();
         ShowTextBox(_currentTextBox._nextTextBoxs[num]);
     }

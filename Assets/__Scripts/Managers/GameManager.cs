@@ -14,9 +14,9 @@ public class GameManager : Singleton<GameManager>
 
 	int _currentNum;
 
-	public List<int> DecisionNumbers = new List<int>();
+	public int[] DecisionNumbers;
 
-	public static Action<int> AddDecisionNum;
+	public static Action<int, int> AddDecisionNum;
 
 	[Header("Textboxes")]
 	[SerializeField] TextDialogue _testDialogue;
@@ -25,9 +25,9 @@ public class GameManager : Singleton<GameManager>
 		_hideCursor.Dispatch();
 	}
 
-	void SaveDecision(int decison)
+	void SaveDecision(int id, int decison)
 	{
-		DecisionNumbers.Add(decison);
+		DecisionNumbers[id] = decison;
 	}
 
     private void OnEnable()
