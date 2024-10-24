@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class ArrowBobbing : MonoBehaviour
 {
+
+    [SerializeField] private Transform player;
+
+
     private float xPos;
     private float yPos;
     private float zPos;
@@ -25,5 +30,7 @@ public class ArrowBobbing : MonoBehaviour
     void Update()
     {
         trans.position = new Vector3(xPos, yPos + 0.2f * Mathf.Sin(Time.realtimeSinceStartup * 2), zPos);
+
+        trans.LookAt(player);
     }
 }
