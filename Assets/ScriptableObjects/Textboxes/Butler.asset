@@ -18,6 +18,6 @@ MonoBehaviour:
   - I will have the table set in a moment, I just seem to have misplaced a spoon.
   - "It should be around here somewhere\u2026"
   SelectionBox: 0
-  OptionNums: 
   _nextTextBoxs: []
   SwitchToState: 5
+  ObjectiveAfterClear: Find The Spoon

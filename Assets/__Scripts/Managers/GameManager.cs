@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using SmartData.SmartEvent;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -29,6 +30,8 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] EndScreen _endScreen;
     [SerializeField] EndScreenText _goodEnding1, _goodEnding2, _neutralEnding, _badEnding1, _badEnding2;
 
+    [SerializeField] TextMeshProUGUI _objectiveText;
+
     private void Start()
     {
         ChangeState(GameState.TalkToMaid);
@@ -44,7 +47,7 @@ public class GameManager : Singleton<GameManager>
         switch (newState)
         {
             case (GameState.TalkToMaid):
-
+                _objectiveText.text = "Talk To Maid";
                 break;
 
             case (GameState.Option1):
@@ -128,6 +131,17 @@ public class GameManager : Singleton<GameManager>
         OnAfterStateChange?.Invoke(newState);
 
         Debug.Log("New Gamestate: " + newState);
+    }
+
+    public void ClearObjectiveText()
+    {
+        _objectiveText.text = "";
+
+    }
+
+    public void SetObjectiveText(string text)
+    {
+        _objectiveText.text = text;
     }
 }
 

@@ -19,3 +19,5 @@ MonoBehaviour:
   - "Oh where did it go?\u2026"
   SelectionBox: 0
   _nextTextBoxs: []
+  SwitchToState: 0
+  ObjectiveAfterClear: Find The Key

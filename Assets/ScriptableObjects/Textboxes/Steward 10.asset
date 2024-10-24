@@ -18,4 +18,5 @@ MonoBehaviour:
   - "I\u2019m sure I can persuade their Majesties to wait a little longer."
   SelectionBox: 0
   _nextTextBoxs: []
-  SaveToIndex: 0
+  SwitchToState: 0
+  ObjectiveAfterClear: Go To Bed

@@ -18,6 +18,6 @@ MonoBehaviour:
   - Terribly unfortunate
   - However there should be some of your medicine left in one of these cupboards
   SelectionBox: 0
-  OptionNums: 
   _nextTextBoxs: []
   SwitchToState: 7
+  ObjectiveAfterClear: Find The Medication

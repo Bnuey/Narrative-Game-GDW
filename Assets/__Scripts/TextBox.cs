@@ -1,6 +1,7 @@
 using DG.Tweening;
 using SmartData.SmartBool;
 using SmartData.SmartEvent;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -38,6 +39,7 @@ public class TextBox : MonoBehaviour
 
     public async void ShowTextBox(TextDialogue textBox)
     {
+        GameManager.Instance.ClearObjectiveText();
         if (textBox.SelectionBox)
         {
             _selectionBox.SetActive(true);
@@ -136,6 +138,11 @@ public class TextBox : MonoBehaviour
 
         if (_currentTextBox.SwitchToState != GameState.Default)
             GameManager.Instance.ChangeState(_currentTextBox.SwitchToState);
+
+        if (!String.IsNullOrEmpty(_currentTextBox.ObjectiveAfterClear))
+        {
+            GameManager.Instance.SetObjectiveText(_currentTextBox.ObjectiveAfterClear);
+        }
 
         _box.gameObject.SetActive(false);
         _currentTextBox = null;

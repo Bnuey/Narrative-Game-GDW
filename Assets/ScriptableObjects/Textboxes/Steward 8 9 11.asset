@@ -22,4 +22,5 @@ MonoBehaviour:
   - He should be through the door.
   SelectionBox: 0
   _nextTextBoxs: []
-  SaveToIndex: 0
+  SwitchToState: 0
+  ObjectiveAfterClear: Go Meet The Prince

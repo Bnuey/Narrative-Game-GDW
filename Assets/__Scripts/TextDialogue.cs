@@ -16,6 +16,8 @@ public class TextDialogue : ScriptableObject
 
     public GameState SwitchToState;
 
+    public string ObjectiveAfterClear;
+
 
     public void ShowText()
     {

@@ -2,13 +2,16 @@ using UnityEngine;
 
 public class BedLogic : MonoBehaviour, IInteractable
 {
-    [SerializeField] GameState _state;
+    [SerializeField] GameState[] _state;
 
     public void InteractedWith(RaycastHit hitinfo)
     {
-        if (GameManager.Instance.CurrentState == _state)
+        foreach (var state in _state)
         {
-            GameManager.Instance.ChangeState(GameState.FallSleep);
+            if (GameManager.Instance.CurrentState == state)
+            {
+                GameManager.Instance.ChangeState(GameState.FallSleep);
+            }
         }
     }
 }
