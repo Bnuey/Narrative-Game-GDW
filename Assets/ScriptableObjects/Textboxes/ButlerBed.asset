@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24d2b63d56ada174c91bff8546e83363, type: 3}
-  m_Name: PlayerPrince
+  m_Name: ButlerBed
   m_EditorClassIdentifier: 
-  Character: {fileID: 11400000, guid: 9f26fd3e0a84a9b4f8056ad226ca69cd, type: 2}
+  Character: {fileID: 11400000, guid: 9228f7bba381bb44498d4ee99630a9ab, type: 2}
   Text:
-  - "You don\u2019t need to worry, I am feeling much better now."
-  - "And\u2026"
-  - I just signed the marriage documents, husband. ;)
+  - Princess you look awful.
+  - Please go get some rest
+  - I'm worried about you
   SelectionBox: 0
   _nextTextBoxs: []
-  SwitchToState: 30
-  ObjectiveAfterClear: 
+  SwitchToState: 0
+  ObjectiveAfterClear: Go To Bed

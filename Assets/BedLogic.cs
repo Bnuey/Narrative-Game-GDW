@@ -6,12 +6,19 @@ public class BedLogic : MonoBehaviour, IInteractable
 
     public void InteractedWith(RaycastHit hitinfo)
     {
-        foreach (var state in _state)
+        switch (GameManager.Instance.CurrentState)
         {
-            if (GameManager.Instance.CurrentState == state)
-            {
-                GameManager.Instance.ChangeState(GameState.FallSleep);
-            }
+            case GameState.GoToBed:
+                GameManager.Instance.ChangeState(GameState.BadEnding2);
+                break;
+
+            case GameState.FindMedsEarly:
+                GameManager.Instance.ChangeState(GameState.BadEnding1);
+                break;
+
+            case GameState.Option10:
+                GameManager.Instance.ChangeState(GameState.BadEnding2);
+                break;
         }
     }
 }

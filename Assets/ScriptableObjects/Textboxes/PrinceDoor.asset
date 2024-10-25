@@ -9,9 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fcf4f6f448da3e4ca7e67027e3b56e7, type: 3}
-  m_Name: You
+  m_Script: {fileID: 11500000, guid: 24d2b63d56ada174c91bff8546e83363, type: 3}
+  m_Name: PrinceDoor
   m_EditorClassIdentifier: 
-  Name: You
-  Color: {r: 0, g: 0, b: 0, a: 1}
-  DialogueAudioClips: {fileID: 11400000, guid: 2045e2e074890e543bdbbfe90ccfb0a2, type: 2}
+  Character: {fileID: 11400000, guid: fe03f3873b0944e4abefa6d7a604c2b0, type: 2}
+  Text:
+  - My Door :(
+  SelectionBox: 0
+  _nextTextBoxs: []
+  SwitchToState: 0
+  ObjectiveAfterClear: 

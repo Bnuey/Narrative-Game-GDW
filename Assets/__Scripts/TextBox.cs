@@ -75,10 +75,6 @@ public class TextBox : MonoBehaviour
         transform.DOShakePosition(30, 3, 50, 90, false, false);
 
         _box.gameObject.SetActive(true);
-        if (_currentTextBox.Character.Color != Color.black)
-            _box.gameObject.SetActive(true);
-        else
-            _box.gameObject.SetActive(false);
 
         _npcTalkingEvent.Dispatch();
         _npcTalking.value = true;
@@ -222,7 +218,7 @@ public class TextBox : MonoBehaviour
                 if (num == 0)
                     GameManager.Instance.ChangeState(GameState.Option13);
                 else if (num == 1)
-                    GameManager.Instance.ChangeState(GameState.Option14);
+                    GameManager.Instance.ChangeState(GameState.Option13);
                 else if (num == 2)
                     GameManager.Instance.ChangeState(GameState.Option15);
                 break;

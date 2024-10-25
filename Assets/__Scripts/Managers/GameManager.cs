@@ -10,6 +10,8 @@ public class GameManager : Singleton<GameManager>
 {
     public GameState CurrentState;
 
+    [SerializeField] GameState _startingState;
+
     public static Action<GameState> OnBeforeStateChange;
     public static Action<GameState> OnAfterStateChange;
 
@@ -18,6 +20,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] TextDialogue _option7, _option8, _option9;
     [SerializeField] TextDialogue _option10, _option11, _option12;
     [SerializeField] TextDialogue _option13, _option14, _option15;
+    [SerializeField] TextDialogue _foundMeds;
 
     [SerializeField] Animator _dinnerFadeAnim;
     [SerializeField] TextDialogue _afterDinner;
@@ -32,9 +35,11 @@ public class GameManager : Singleton<GameManager>
 
     [SerializeField] TextMeshProUGUI _objectiveText;
 
+    [SerializeField] TextDialogue _findPillsEarly;
+
     private void Start()
     {
-        ChangeState(GameState.TalkToMaid);
+        ChangeState(_startingState);
     }
 
     public async void ChangeState(GameState newState)
@@ -96,15 +101,12 @@ public class GameManager : Singleton<GameManager>
                 break;
 
             case GameState.Option13:
-                _endScreen.ShowEndScreen(_goodEnding1);
                 break;
 
             case GameState.Option14:
-                _endScreen.ShowEndScreen(_goodEnding1);
                 break;
 
             case GameState.Option15:
-                _endScreen.ShowEndScreen(_goodEnding2);
                 break;
 
             case (GameState.Dinner):
@@ -126,6 +128,34 @@ public class GameManager : Singleton<GameManager>
             case GameState.FallSleep:
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 break;
+
+            case GameState.FoundMeds:
+                _foundMeds.ShowText();
+                break;
+
+            case GameState.GoodEnding1:
+                _endScreen.ShowEndScreen(_goodEnding1);
+                break;
+
+            case GameState.GoodEnding2:
+                _endScreen.ShowEndScreen(_goodEnding2);
+                break;
+
+            case GameState.NeutralEnding:
+                _endScreen.ShowEndScreen(_neutralEnding);
+                break;
+
+            case GameState.BadEnding1:
+                _endScreen.ShowEndScreen(_badEnding1);
+                break;
+
+            case GameState.BadEnding2:
+                _endScreen.ShowEndScreen(_badEnding2);
+                break;
+
+            case GameState.FindMedsEarly:
+                _findPillsEarly.ShowText();
+                break;
         }
 
         OnAfterStateChange?.Invoke(newState);
@@ -142,6 +172,11 @@ public class GameManager : Singleton<GameManager>
     public void SetObjectiveText(string text)
     {
         _objectiveText.text = text;
+    }
+
+    public void HideTextBox()
+    {
+        _textBox.HideTextBox();
     }
 }
 
@@ -183,5 +218,13 @@ public enum GameState
     Option15 = 26,
 
     FallSleep = 27,
+
+    GoodEnding1 = 28,
+    GoodEnding2 = 29,
+
+    NeutralEnding = 30,
+
+    BadEnding1 = 31,
+    BadEnding2 = 32,
 
 }

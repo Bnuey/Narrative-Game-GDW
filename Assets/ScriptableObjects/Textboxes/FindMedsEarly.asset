@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24d2b63d56ada174c91bff8546e83363, type: 3}
-  m_Name: PlayerPrince
+  m_Name: FindMedsEarly
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: 9f26fd3e0a84a9b4f8056ad226ca69cd, type: 2}
   Text:
-  - "You don\u2019t need to worry, I am feeling much better now."
-  - "And\u2026"
-  - I just signed the marriage documents, husband. ;)
+  - '*You Take All of The Pills*'
+  - You Feel Horrible. . .
   SelectionBox: 0
   _nextTextBoxs: []
-  SwitchToState: 30
+  SwitchToState: 0
   ObjectiveAfterClear: 
