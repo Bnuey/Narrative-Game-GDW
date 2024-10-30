@@ -7,9 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dither
-  m_Shader: {fileID: -6465566751694194690, guid: 19ecdde54aab22347bb35e8213aa1963,
-    type: 3}
+  m_Name: CustomShader
+  m_Shader: {fileID: 4800000, guid: 982bc3b986be152458d14f02b748d6cd, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -24,23 +23,13 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
+    - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats:
-    - _ColorResolution: 8
-    - _DitherSpread: 0.1
-    - _PosterizationAmount: 20
-    m_Colors: []
+    m_Floats: []
+    m_Colors:
+    - _BaseColor: {r: 1, g: 0.87729466, b: 0.2688679, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

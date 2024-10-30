@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ab335a9040e884faa4de3860abdf55, type: 3}
+  m_Name: ShrimpVoice
+  m_EditorClassIdentifier: 
+  MinPitch: 0.75
+  MaxPitch: 0.85
+  Volume: 0.6
+  Frequency: 3
+  Clips:
+  - {fileID: 8300000, guid: ac345e6c0f8e17946b736f1f60326572, type: 3}
+  - {fileID: 8300000, guid: 55cc1b794ee81904cac6d7bb7f7fbf0b, type: 3}
+  - {fileID: 8300000, guid: 7b1c48eeadcba394f91dbd7822b19088, type: 3}
+  - {fileID: 8300000, guid: f386c6cc4a8db03468a782e793440a03, type: 3}
+  - {fileID: 8300000, guid: cde284e3df1ad9f4a836b42552c89429, type: 3}
+  - {fileID: 8300000, guid: 940e11bcca437d34c9c87f872e2cb9d0, type: 3}
+  - {fileID: 8300000, guid: de7434a09731ff74882449997f3157f6, type: 3}
+  - {fileID: 8300000, guid: 83c15ad9a0805bd44abdc7751e187c1d, type: 3}
+  - {fileID: 8300000, guid: 855260a6b03b1d64ba558a1f56c33396, type: 3}

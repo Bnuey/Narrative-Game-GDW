@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Prince
   Color: {r: 0.3735848, g: 0, b: 0.23617007, a: 1}
-  DialogueAudioClips: {fileID: 11400000, guid: 2045e2e074890e543bdbbfe90ccfb0a2, type: 2}
+  DialogueAudioClips: {fileID: 11400000, guid: 2ff398e50c1dfc84abc421915e048ebf, type: 2}
