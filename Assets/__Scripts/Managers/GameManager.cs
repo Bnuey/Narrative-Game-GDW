@@ -37,6 +37,9 @@ public class GameManager : Singleton<GameManager>
 
     [SerializeField] TextDialogue _findPillsEarly;
 
+    bool _texturesOn = true;
+    public static Action<bool> TextureStateChanged;
+
     private void Start()
     {
         ChangeState(_startingState);
@@ -177,6 +180,16 @@ public class GameManager : Singleton<GameManager>
     public void HideTextBox()
     {
         _textBox.HideTextBox();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            _texturesOn = !_texturesOn;
+            TextureStateChanged?.Invoke(_texturesOn);
+        }
+        
     }
 }
 

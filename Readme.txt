@@ -2,27 +2,38 @@ Video: https://drive.google.com/file/d/1oVqJKKbKowb56B6ePLUPArV3gxclKg5o/view?us
 Github: https://github.com/Bnuey/Narrative-Game-GDW
 
 
-Part 1: Base --------------------------------------------------------------------
+Part 1: Improvements --------------------------------------------------------------------
 
-The game takes place in a dream where you have to wake up. There are 3 different endings, 2 bad, 1 neutral, and 2 good.
+-Everything has been textured now
+-Several bug fixes
+-Added vignette for style
+-Added Lens Flares
+-Added Particles
+-Added Outline Shader
 
-Dynamic props
-	keys, doors, grabable items, etc.
+Part 2: Texturing --------------------------------------------------------------------=
 
-Part 2: Illumination --------------------------------------------------------------------
+Every environment surface, such as the walls and floor for each room, have now been textured
+The textures were created:
+-Downloading from AmbientCG
+-Changing each part of the texture to only be 64x64 pixels
+-Removed Anti-aliasing
+-Imported them into the game and turned their Tiling scale to 0.2
 
-Most objects have Ambient + specular lighting
-The bed sheets have Ambient lightining
-The rubber duck has lambert lighting
+This makes for interesting looking textures that still match the asthetics. They work really well with the dither shader to give a pixelated feel
 
-Part 3: Color Grading --------------------------------------------------------------------
+Here are the original textures from AmbientCG
+	-https://ambientcg.com/view?id=WoodFloor051
+	-https://ambientcg.com/view?id=Wallpaper001C
+	-https://ambientcg.com/view?id=Carpet012
+	-https://ambientcg.com/view?id=Bricks085
 
-Color correction that makes the game more blue giving it a colder and more mysterious feel.
+Part 3: Visual Effects --------------------------------------------------------------------
 
-Part 4: Shaders & Effects --------------------------------------------------------------------
+-Outline Shader
+	The outline actually works differently from the example from class. It uses the same base shader to get the outline effect, but the render settings in the  
 
-Dither Shader:
-	Full screen render pass that gets all the colors, applies a dither effect, and posterizes the colors.
+-Particles
+	
 
-Hologram Shader:
-	2D Texture that scrolls on the y axis + rim lighting to see the object's shape
+-Lens Flare
