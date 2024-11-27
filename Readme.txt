@@ -1,4 +1,4 @@
-Video: 
+Video: https://youtu.be/jRKMFqn4-Ng
 Github: https://github.com/Bnuey/Narrative-Game-GDW
 
 
@@ -10,6 +10,7 @@ Part 1: Improvements -----------------------------------------------------------
 -Added Lens Flares
 -Added Particles
 -Added Outline Shader
+-Added the ability to toggle textures, lighting, and some shaders, on and off by pressing P
 
 Part 2: Texturing --------------------------------------------------------------------=
 
