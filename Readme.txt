@@ -1,4 +1,4 @@
-Video: https://drive.google.com/file/d/1oVqJKKbKowb56B6ePLUPArV3gxclKg5o/view?usp=sharing
+Video: 
 Github: https://github.com/Bnuey/Narrative-Game-GDW
 
 
@@ -31,9 +31,10 @@ Here are the original textures from AmbientCG
 Part 3: Visual Effects --------------------------------------------------------------------
 
 -Outline Shader
-	The outline actually works differently from the example from class. It uses the same base shader to get the outline effect, but the render settings in the  
+	The outline actually works differently from the example from class. It uses the same base shader to get the outline effect, but the render settings in the Universal Render Data asset are setup in a way that draws everything first, then draws the outlines, then draws the object on top. This makes the outline look more consistent especially with areas of high detail. You can't potentially see the outline from a face the camera is parallel to. It's hard to explain with just text but basically it looks better espeically with more complex objects.
 
 -Particles
-	
+	A Particle System is used that covers the entire scene. It simply creates falling star dust with trails. I felt like this added to the fact that the game takes place in a dream. It gives it a magical feel.
 
 -Lens Flare
+	I found out that there is actually a component just for lens flares. You can either use the 'Lens Flare' component or 'Lens Flare (SRP)' depending on if you are using URP or not. Then I just added this component and tweawked the settings to all the lights in the scene.

@@ -1886,7 +1886,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 067f2f8e3db6a314790f73ff7e2a4c6c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.895
+      value: -5.881
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 067f2f8e3db6a314790f73ff7e2a4c6c,
         type: 3}
@@ -1896,7 +1896,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 067f2f8e3db6a314790f73ff7e2a4c6c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.746
+      value: 8.945
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 067f2f8e3db6a314790f73ff7e2a4c6c,
         type: 3}
@@ -1956,6 +1956,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 114500726}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 067f2f8e3db6a314790f73ff7e2a4c6c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 114500729}
   m_SourcePrefab: {fileID: 100100000, guid: 067f2f8e3db6a314790f73ff7e2a4c6c, type: 3}
 --- !u!4 &114500724 stripped
 Transform:
@@ -1990,6 +1994,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.030926887
   m_Center: {x: 0.018769352, y: -5.187779e-10, z: 0.01373649}
+--- !u!114 &114500729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114500725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b8748f32fb98f94cb14c1b36c0578b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &123800460
 GameObject:
   m_ObjectHideFlags: 0
@@ -19994,6 +20010,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2077629554}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1250330172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250330162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b8748f32fb98f94cb14c1b36c0578b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1255034133
 GameObject:
   m_ObjectHideFlags: 0
@@ -28042,6 +28070,7 @@ GameObject:
   - component: {fileID: 2025911702}
   - component: {fileID: 2025911701}
   - component: {fileID: 2025911703}
+  - component: {fileID: 2025911704}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
@@ -28274,6 +28303,18 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+--- !u!114 &2025911704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025911699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aae18881e8a2262409b07c2dfddeac5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2032046498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28922,6 +28963,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1250330166}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 067f2f8e3db6a314790f73ff7e2a4c6c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1250330172}
   m_SourcePrefab: {fileID: 100100000, guid: 067f2f8e3db6a314790f73ff7e2a4c6c, type: 3}
 --- !u!1 &2129972707
 GameObject:
